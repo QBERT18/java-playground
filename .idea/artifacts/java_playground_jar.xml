@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="java-playground:jar">
-    <output-path>$PROJECT_DIR$/target/touch-executable</output-path>
-    <root id="archive" name="java-playground.jar">
+  <artifact type="jar" name="java-playground:jar">
+    <output-path>$PROJECT_DIR$/target/touch-executable-jar</output-path>
+    <root id="archive" name="touch.jar">
       <element id="module-output" name="java-playground" />
     </root>
   </artifact>
