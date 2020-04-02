@@ -1,31 +1,39 @@
 package problem7_10001st_prime;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class ThousandFirstPrime {
-    public static void thousandFirstPrime(ArrayList<Integer> primes) {
-        for(int i = 2; i < 1000; i++) {
-            if (isPrime(i))
+    public static Object thousandFirstPrime(ArrayList<Integer> primes, int searchedPosition) {
+        Object result = 0;
+        for(int i = 0; i <= 150000; i++) {
+            if(isPrime(i))
                 primes.add(i);
         }
-        for(int i = 0; i < primes.size(); i++) {
-            if(i == 154) {
-                System.out.println(String.format("Die Zahl %s; Sein Index: %s; Und ist die %s. Zahl", primes.get(i), primes.indexOf(i), primes.indexOf(i) + 1));
+        for(int i = 0; i < primes.toArray().length; i++) {
+            if(i + 1 == searchedPosition) {
+                result = primes.toArray()[i];
             }
         }
+        return result;
     }
-    public static Boolean isPrime(int number) {
+    private static boolean isPrime(int num) {
+        boolean result = false;
+        int divisor = 0;
         int counter = 0;
-        boolean result = true;
-        for(int i = number; i >= 1; i--) {
-            if(number % i == 0) {
-              counter++;
-            }
-            if(counter > 2) {
-                result = false;
-                break;
-            }
+        if(num != 0 && num != 1) {
+           divisor = num;
+           while(divisor >= 1) {
+               if(num % divisor == 0)
+                   counter++;
+                    if(counter > 2) {
+                        result = false;
+                        break;
+                    }
+                    else {
+                        result = true;
+                    }
+               divisor--;
+           }
         }
         return result;
     }
