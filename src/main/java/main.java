@@ -4,6 +4,6 @@ import java.util.ArrayList;
 
 public class main {
     public static void main(String[] args) {
-        LargestProductInSeries.largesProduct(new ArrayList<Integer>());
+        System.out.println(LargestProductInSeries.largesProduct());
     }
 }

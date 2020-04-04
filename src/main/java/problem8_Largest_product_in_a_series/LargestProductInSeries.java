@@ -1,14 +1,16 @@
 package problem8_Largest_product_in_a_series;
 
-import java.util.ArrayList;
-
 public class LargestProductInSeries {
-    public static void largesProduct(ArrayList<Integer> numbers) {
-        for(int i = 0; i <= 975; i++) {
-            System.out.println(getProduct(i));
+    public static long largesProduct() {
+        long rem = 0;
+        for(int i = 0; i < 100; i++) {
+            if (getProduct(i) > rem) {
+                rem = getProduct(i);
+            }
         }
+        return rem;
     }
-    private static int getProduct(int start) {
+    private static long getProduct(int start) {
         String setOfNumbers = "73167176531330624919225119674426574742355349194934" +
                 "96983520312774506326239578318016984801869478851843" +
                 "85861560789112949495459501737958331952853208805511" +
@@ -30,8 +32,8 @@ public class LargestProductInSeries {
                 "05886116467109405077541002256983155200055935729725" +
                 "71636269561882670428252483600823257530420752963450";
         int end = 13 + start;
-        int remember = 0;
-        int factor = 1;
+        long remember = 0;
+        long factor;
         while (end < 1000) {
             factor = 1;
             String numSet = setOfNumbers.substring(start, end);
@@ -45,4 +47,28 @@ public class LargestProductInSeries {
         }
         return remember;
     }
+    /*
+        private static void createFile() {
+            try {
+                File file = new File(".\\calcs.txt");
+                if(file.createNewFile()) {
+                    System.out.println("File created:" + file.getName());
+                } else {
+                    System.out.println("File already exists");
+                }
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+        public static void writeFile(String text) {
+            try {
+                FileWriter fileWriter = new FileWriter(".\\calcs.txt");
+                fileWriter.write(text);
+                fileWriter.close();
+                System.out.println("Successfully wrote into the file");
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+    */
 }
