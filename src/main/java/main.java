@@ -1,9 +1,8 @@
 import problem7_10001st_prime.ThousandFirstPrime;
-
-import java.util.ArrayList;
+import problem8_Largest_product_in_a_series.LargestProductInSeries;
 
 public class main {
     public static void main(String[] args) {
-        System.out.println(ThousandFirstPrime.thousandFirstPrime(new ArrayList<Integer>(), 10001));
+        LargestProductInSeries.getProduct();
     }
 }
