@@ -47,28 +47,4 @@ public class LargestProductInSeries {
         }
         return remember;
     }
-    /*
-        private static void createFile() {
-            try {
-                File file = new File(".\\calcs.txt");
-                if(file.createNewFile()) {
-                    System.out.println("File created:" + file.getName());
-                } else {
-                    System.out.println("File already exists");
-                }
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
-        public static void writeFile(String text) {
-            try {
-                FileWriter fileWriter = new FileWriter(".\\calcs.txt");
-                fileWriter.write(text);
-                fileWriter.close();
-                System.out.println("Successfully wrote into the file");
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
-    */
 }

@@ -1,7 +1,6 @@
-import problem9_Special_Pythagorean_triplet.SpecialPythagoreanTriplet;
+import problem10_Summation_of_primes.SummationOfPrimes;
 
 public class main {
     public static void main(String[] args) {
-        System.out.println(SpecialPythagoreanTriplet.getPythagoreanTriple());
     }
 }
