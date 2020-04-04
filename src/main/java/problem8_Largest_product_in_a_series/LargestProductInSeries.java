@@ -1,7 +1,14 @@
 package problem8_Largest_product_in_a_series;
 
+import java.util.ArrayList;
+
 public class LargestProductInSeries {
-    public static void getProduct() {
+    public static void largesProduct(ArrayList<Integer> numbers) {
+        for(int i = 0; i <= 975; i++) {
+            System.out.println(getProduct(i));
+        }
+    }
+    private static int getProduct(int start) {
         String setOfNumbers = "73167176531330624919225119674426574742355349194934" +
                 "96983520312774506326239578318016984801869478851843" +
                 "85861560789112949495459501737958331952853208805511" +
@@ -22,26 +29,20 @@ public class LargestProductInSeries {
                 "84580156166097919133875499200524063689912560717606" +
                 "05886116467109405077541002256983155200055935729725" +
                 "71636269561882670428252483600823257530420752963450";
-        boolean check = true;
-        int start = 0;
-        int end = 13;
+        int end = 13 + start;
         int remember = 0;
-        int factor = 0;
-        while(check) {
+        int factor = 1;
+        while (end < 1000) {
+            factor = 1;
             String numSet = setOfNumbers.substring(start, end);
-            System.out.println(numSet.trim());
-            for(int i = 0; i < numSet.trim().toCharArray().length; i++) {
-                if(factor == 0)
-                    factor = Integer.parseInt(String.valueOf(numSet.toCharArray()[i]));
-                else
-                    factor *= Integer.parseInt(String.valueOf(numSet.toCharArray()[i]));
+            for (int i = 0; i < numSet.toCharArray().length; i++) {
+                factor *= Integer.parseInt(String.valueOf(numSet.toCharArray()[i]));
             }
-            if(factor > remember)
+            if (factor > remember)
                 remember = factor;
             start = end;
             end += 13;
-            if(setOfNumbers.substring(start, end).length() == 0)
-                check = false;
         }
+        return remember;
     }
 }
